@@ -1,0 +1,19 @@
+﻿{
+  "name": "auditguard-skills",
+  "version": "1.0.0",
+  "description": "Install AuditGuard agent skills for Claude Code, Cursor, and other AI agents",
+  "bin": {
+    "auditguard-skills": "./bin/cli.js"
+  },
+  "main": "./lib/install.js",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["auditguard", "skills", "agent", "pentest", "audit", "claude"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AuditGuard-Community/skills"
+  }
+}

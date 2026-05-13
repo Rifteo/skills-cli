@@ -1,0 +1,18 @@
+# TODO: configure NPM_TOKEN secret before enabling
+name: Publish to npm
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+      # TODO: npm publish --access public
+      # requires NPM_TOKEN secret in repo settings
