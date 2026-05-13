@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 import { installSkill, removeSkill, listInstalledSkills } from '../lib/install.js'
 import { fetchAvailableSkills } from '../lib/fetch.js'
 import { AGENTS, detectAgents, resolveSkillDir } from '../lib/agents.js'
@@ -16,10 +16,10 @@ const flags = {
 
 function log(msg) { console.log(msg) }
 function err(msg) { console.error(`\n  error  ${msg}\n`); process.exit(1) }
-function ok(msg)  { console.log(`  âœ“  ${msg}`) }
+function ok(msg)  { console.log(`  ✓  ${msg}`) }
 
 const HELP = `
-  auditguard-skills â€” AuditGuard agent skills manager
+  auditguard-skills — AuditGuard agent skills manager
 
   Usage:
     auditguard-skills add <skill>      Install a skill
@@ -42,7 +42,7 @@ const HELP = `
     auditguard-skills agents
 `
 
-// Resolve target agents â€” specific one or all detected
+// Resolve target agents — specific one or all detected
 function resolveTargetAgents() {
   if (flags.agent) {
     if (!AGENTS[flags.agent]) err(`Unknown agent "${flags.agent}". Run "AuditGuard-Community-skills agents" to see detected agents.`)
@@ -65,7 +65,7 @@ switch (command) {
 
     installSkill(skillName, targets, flags.global)
       .then(results => {
-        results.forEach(({ agent, skillFile }) => ok(`[${agent}] â†’ ${skillFile}`))
+        results.forEach(({ agent, skillFile }) => ok(`[${agent}] → ${skillFile}`))
         log('')
       })
       .catch(e => err(e.message))
@@ -82,7 +82,7 @@ switch (command) {
     Promise.allSettled(
       targets.map(agent =>
         removeSkill(skillName, agent, flags.global)
-          .then(({ skillFile }) => ok(`[${agent}] removed â†’ ${skillFile}`))
+          .then(({ skillFile }) => ok(`[${agent}] removed → ${skillFile}`))
           .catch(() => log(`  -  [${agent}] not installed, skipping`))
       )
     ).then(() => log(''))
@@ -98,7 +98,7 @@ switch (command) {
         log(`  [${agent}] no skills installed`)
       } else {
         log(`  [${agent}]`)
-        installed.forEach(s => log(`    â€¢ ${s}`))
+        installed.forEach(s => log(`    • ${s}`))
       }
     })
     log('')
@@ -111,7 +111,7 @@ switch (command) {
     if (detected.length === 0) {
       log('  None detected. Use --agent <name> to target one manually.')
     } else {
-      detected.forEach(a => log(`    â€¢ ${a}`))
+      detected.forEach(a => log(`    • ${a}`))
     }
     log(`\n  All supported agents: ${Object.keys(AGENTS).join(', ')}\n`)
     break
@@ -122,7 +122,7 @@ switch (command) {
     fetchAvailableSkills()
       .then(skills => {
         log(`\n  Available skills:\n`)
-        skills.forEach(s => log(`    â€¢ ${s}`))
+        skills.forEach(s => log(`    • ${s}`))
         log(`\n  Install with: AuditGuard-Community-skills add <skill-name>\n`)
       })
       .catch(e => err(e.message))

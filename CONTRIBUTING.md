@@ -1,4 +1,4 @@
-﻿# Contributing to auditguard-skills
+# Contributing to auditguard-skills
 
 ## Adding a new agent
 
@@ -16,7 +16,7 @@ Then update the supported agents table in `README.md`.
 ## Adding a new skill
 
 Skills live in the [agent-skills](https://github.com/AuditGuard-Community/agent-skills) repo, not here.
-Open a PR there â€” a GitHub Actions workflow auto-updates the discovery index on merge.
+Open a PR there — a GitHub Actions workflow auto-updates the discovery index on merge.
 
 ## Running locally
 

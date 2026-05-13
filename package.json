@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "auditguard-skills",
   "version": "1.0.0",
   "description": "Install AuditGuard agent skills for Claude Code, Cursor, and other AI agents",

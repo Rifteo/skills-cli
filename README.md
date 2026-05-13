@@ -1,6 +1,6 @@
-﻿# auditguard-skills
+# auditguard-skills
 
-The CLI for the AuditGuard open agent skills ecosystem â€” install security and audit skills into 25+ coding agents including Claude Code, Gemini CLI, Cursor, GitHub Copilot, Windsurf, and more.
+The CLI for the AuditGuard open agent skills ecosystem — install security and audit skills into 25+ coding agents including Claude Code, Gemini CLI, Cursor, GitHub Copilot, Windsurf, and more.
 
 ## Quickstart
 
@@ -23,7 +23,7 @@ npm link
 
 This registers `auditguard-skills` as a global command on your machine. You only need to do this once.
 
-> `npm publish` coming soon â€” once released, `npx auditguard-skills` will work without cloning.
+> `npm publish` coming soon — once released, `npx auditguard-skills` will work without cloning.
 
 ## Commands
 
@@ -80,18 +80,18 @@ Skills are stored in agent-specific directories and picked up automatically on t
 
 | Skill | What it does |
 |---|---|
-| `finding-writer` | Raw notes â†’ structured audit finding |
-| `risk-assessor` | Scores risks using likelihood Ã— impact matrix |
+| `finding-writer` | Raw notes → structured audit finding |
+| `risk-assessor` | Scores risks using likelihood × impact matrix |
 | `control-tester` | Generates test procedures for any security control |
-| `remediation-planner` | Finding â†’ step-by-step remediation plan with effort estimates |
+| `remediation-planner` | Finding → step-by-step remediation plan with effort estimates |
 | `audit-checklist` | Generates framework-specific audit checklists |
 | `scope-analyzer` | Proposes audit scope, boundaries, and key risk areas |
-| `executive-brief-writer` | Findings â†’ board-ready one-page executive summary |
+| `executive-brief-writer` | Findings → board-ready one-page executive summary |
 | `compliance-gap-analyzer` | Identifies gaps against ISO, SOC2, NIST, PCI-DSS, GDPR, DORA |
 | `audit-email-writer` | Drafts professional audit communication emails |
 | `ai-act-classifier` | Classifies AI systems under EU AI Act risk tiers |
 
-Browse and contribute skills â†’ [github.com/AuditGuard-Community/agent-skills](https://github.com/AuditGuard-Community/agent-skills)
+Browse and contribute skills → [github.com/AuditGuard-Community/agent-skills](https://github.com/AuditGuard-Community/agent-skills)
 
 ## Supported agents
 
@@ -175,7 +175,7 @@ description: What this skill does and when to use it
 Instructions for the agent to follow when this skill is activated.
 ```
 
-4. Open a pull request â€” all skill submissions are welcome
+4. Open a pull request — all skill submissions are welcome
 
 ## Part of AuditGuard
 
