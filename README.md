@@ -1,4 +1,4 @@
-# auditguard-skills
+# AuditGuard Skills CLI
 
 The CLI for the AuditGuard open agent skills ecosystem — install security and audit skills into 25+ coding agents including Claude Code, Gemini CLI, Cursor, GitHub Copilot, Windsurf, and more.
 
