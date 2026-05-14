@@ -17,7 +17,7 @@ Clone the repo and link it globally with npm:
 
 ```bash
 git clone https://github.com/AuditGuard-Community/skills-cli
-cd skills
+cd skills-cli
 npm link
 ```
 
