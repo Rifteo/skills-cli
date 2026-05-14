@@ -1,6 +1,15 @@
+<div align="center">
+
 # AuditGuard Skills CLI
 
-The CLI for the AuditGuard open agent skills ecosystem — install security and audit skills into 25+ coding agents including Claude Code, Gemini CLI, Cursor, GitHub Copilot, Windsurf, and more.
+The CLI for the AuditGuard open agent skills ecosystem — install security and audit skills into 54+ coding agents including Claude Code, Gemini CLI, Cursor, GitHub Copilot, Windsurf, and more.
+
+[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![npm](https://img.shields.io/badge/npm-coming%20soon-lightgrey)](https://www.npmjs.com/package/auditguard-skills)
+[![Issues](https://img.shields.io/github/issues/AuditGuard-Community/skills-cli)](https://github.com/AuditGuard-Community/skills-cli/issues)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](https://github.com/AuditGuard-Community/skills-cli/pulls)
+
+</div>
 
 ## Quickstart
 
