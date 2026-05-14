@@ -5,8 +5,8 @@ The CLI for the AuditGuard open agent skills ecosystem — install security and 
 ## Quickstart
 
 ```bash
-git clone https://github.com/AuditGuard-Community/skills
-cd skills
+git clone https://github.com/AuditGuard-Community/skills-cli
+cd skills-cli
 npm link
 auditguard-skills add finding-writer
 ```
@@ -16,7 +16,7 @@ auditguard-skills add finding-writer
 Clone the repo and link it globally with npm:
 
 ```bash
-git clone https://github.com/AuditGuard-Community/skills
+git clone https://github.com/AuditGuard-Community/skills-cli
 cd skills
 npm link
 ```
@@ -81,17 +81,8 @@ Skills are stored in agent-specific directories and picked up automatically on t
 | Skill | What it does |
 |---|---|
 | `finding-writer` | Raw notes → structured audit finding |
-| `risk-assessor` | Scores risks using likelihood × impact matrix |
-| `control-tester` | Generates test procedures for any security control |
-| `remediation-planner` | Finding → step-by-step remediation plan with effort estimates |
-| `audit-checklist` | Generates framework-specific audit checklists |
-| `scope-analyzer` | Proposes audit scope, boundaries, and key risk areas |
-| `executive-brief-writer` | Findings → board-ready one-page executive summary |
-| `compliance-gap-analyzer` | Identifies gaps against ISO, SOC2, NIST, PCI-DSS, GDPR, DORA |
-| `audit-email-writer` | Drafts professional audit communication emails |
-| `ai-act-classifier` | Classifies AI systems under EU AI Act risk tiers |
 
-Browse and contribute skills → [github.com/AuditGuard-Community/agent-skills](https://github.com/AuditGuard-Community/agent-skills)
+Browse and contribute skills → [github.com/AuditGuard-Community/skills](https://github.com/AuditGuard-Community/skills)
 
 ## Supported agents
 
@@ -155,7 +146,7 @@ Browse and contribute skills → [github.com/AuditGuard-Community/agent-skills](
 
 ## Creating a skill
 
-1. Fork [github.com/AuditGuard-Community/agent-skills](https://github.com/AuditGuard-Community/agent-skills)
+1. Fork [github.com/AuditGuard-Community/askills](https://github.com/AuditGuard-Community/skills)
 2. Create a folder named after your skill
 3. Add a `SKILL.md` file
 
