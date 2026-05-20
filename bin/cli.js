@@ -1,7 +1,37 @@
 #!/usr/bin/env node
+import readline from 'readline'
 import { installSkill, removeSkill, listInstalledSkills } from '../lib/install.js'
 import { fetchAvailableSkills } from '../lib/fetch.js'
 import { AGENTS, detectAgents, resolveSkillDir } from '../lib/agents.js'
+import { readPrefs, writePrefs } from '../lib/prefs.js'
+import { installCommands } from '../lib/commands.js'
+
+function ask(question) {
+  const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
+  return new Promise(resolve => rl.question(question, answer => { rl.close(); resolve(answer.trim()) }))
+}
+
+async function promptCommands() {
+  const prefs = readPrefs()
+  if (prefs.commands === 'never') return
+  if (!process.stdin.isTTY) return
+
+  const answer = await ask('\n  Install AuditGuard slash commands for Claude Code? [Y/n/never] ')
+  const normalized = answer.toLowerCase()
+
+  if (normalized === '' || normalized === 'y') {
+    try {
+      const installed = await installCommands()
+      installed.forEach(f => ok(`[commands] /auditguard:${f.replace('.md', '')}`))
+    } catch (e) {
+      log(`  ! Could not install commands: ${e.message}`)
+    }
+  } else if (normalized === 'never') {
+    writePrefs({ ...prefs, commands: 'never' })
+    log('  Commands will not be suggested again.')
+  }
+  // 'n' = skip silently, ask again next install
+}
 
 const args = process.argv.slice(2)
 const command = args[0]
@@ -64,9 +94,10 @@ switch (command) {
     log(`\n  Installing "${skillName}" into ${targets.length} agent(s)...\n`)
 
     installSkill(skillName, targets, flags.global)
-      .then(results => {
+      .then(async results => {
         results.forEach(({ agent, skillFile }) => ok(`[${agent}] → ${skillFile}`))
         log('')
+        if (targets.includes('claude-code')) await promptCommands()
       })
       .catch(e => err(e.message))
     break
