@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readline from 'readline'
-import { installSkill, removeSkill, listInstalledSkills } from '../lib/install.js'
-import { fetchAvailableSkills } from '../lib/fetch.js'
+import { installSkill, removeSkill, listInstalledSkills, getInstalledVersion } from '../lib/install.js'
+import { fetchAvailableSkills, fetchSkillVersion } from '../lib/fetch.js'
 import { AGENTS, detectAgents, resolveSkillDir } from '../lib/agents.js'
 import { readPrefs, writePrefs } from '../lib/prefs.js'
 import { installCommands } from '../lib/commands.js'
@@ -54,6 +54,8 @@ const HELP = `
   Usage:
     auditguard-skills add <skill>      Install a skill
     auditguard-skills remove <skill>   Remove an installed skill
+    auditguard-skills update           Update all installed skills to latest version
+    auditguard-skills outdated         Show which installed skills have a newer version
     auditguard-skills list             List installed skills
     auditguard-skills available        List all available skills
     auditguard-skills agents           List detected agents on this machine
@@ -157,6 +159,74 @@ switch (command) {
         log(`\n  Install with: AuditGuard-Community-skills add <skill-name>\n`)
       })
       .catch(e => err(e.message))
+    break
+  }
+
+  case 'outdated': {
+    const targets = resolveTargetAgents()
+    log('\n  Checking for updates...\n')
+
+    const rows = []
+    for (const agent of targets) {
+      const skills = listInstalledSkills(agent, flags.global)
+      for (const skillName of skills) {
+        const local = getInstalledVersion(skillName, agent, flags.global)
+        const remote = await fetchSkillVersion(skillName).catch(() => null)
+        if (remote && remote !== local) {
+          rows.push({ agent, skillName, local: local ?? 'unknown', remote })
+        }
+      }
+    }
+
+    if (rows.length === 0) {
+      log('  All skills are up to date.\n')
+    } else {
+      log(`  ${'Skill'.padEnd(28)} ${'Agent'.padEnd(18)} ${'Installed'.padEnd(12)} Latest`)
+      log(`  ${''.padEnd(70, '-')}`)
+      rows.forEach(({ agent, skillName, local, remote }) =>
+        log(`  ${skillName.padEnd(28)} ${agent.padEnd(18)} ${local.padEnd(12)} ${remote}`)
+      )
+      log(`\n  Run "auditguard-skills update" to update all.\n`)
+    }
+    break
+  }
+
+  case 'update': {
+    const targets = resolveTargetAgents()
+    log('\n  Checking for updates...\n')
+
+    const toUpdate = []
+    for (const agent of targets) {
+      const skills = listInstalledSkills(agent, flags.global)
+      for (const skillName of skills) {
+        const local = getInstalledVersion(skillName, agent, flags.global)
+        const remote = await fetchSkillVersion(skillName).catch(() => null)
+        if (remote && remote !== local) {
+          toUpdate.push({ agent, skillName, local: local ?? 'unknown', remote })
+        }
+      }
+    }
+
+    if (toUpdate.length === 0) {
+      log('  All skills are up to date.\n')
+      break
+    }
+
+    const uniqueSkills = [...new Set(toUpdate.map(r => r.skillName))]
+    for (const skillName of uniqueSkills) {
+      const agents = toUpdate.filter(r => r.skillName === skillName).map(r => r.agent)
+      log(`  Updating "${skillName}"...`)
+      try {
+        const results = await installSkill(skillName, agents, flags.global)
+        results.forEach(({ agent }) => {
+          const { local, remote } = toUpdate.find(r => r.skillName === skillName && r.agent === agent)
+          ok(`[${agent}] ${skillName} ${local} → ${remote}`)
+        })
+      } catch (e) {
+        log(`  ! Failed to update "${skillName}": ${e.message}`)
+      }
+    }
+    log('')
     break
   }
 
