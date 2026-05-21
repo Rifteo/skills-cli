@@ -46,6 +46,12 @@ auditguard-skills add finding-writer --agent gemini-cli
 # Install globally (user home directory)
 auditguard-skills add finding-writer --global
 
+# Check which installed skills have a newer version available
+auditguard-skills outdated
+
+# Update all installed skills to their latest version
+auditguard-skills update
+
 # List all available skills from the registry
 auditguard-skills available
 
@@ -68,6 +74,30 @@ auditguard-skills help
 |---|---|
 | `-a, --agent <name>` | Target a specific agent (default: all detected agents) |
 | `-g, --global` | Install to user home directory instead of project level |
+
+## Keeping skills up to date
+
+When a skill is updated in the registry, your local copy stays at the old version until you update it.
+
+```bash
+# See what's outdated
+auditguard-skills outdated
+
+#   Skill                        Agent              Installed    Latest
+#   ----------------------------------------------------------------------
+#   bugbounty-reporter           claude-code        1.0.0        1.1.0
+#   hexstrike-forge              claude-code        1.1.0        1.2.0
+
+# Update everything at once
+auditguard-skills update
+
+#   Updating "bugbounty-reporter"...
+#   ✓  [claude-code] bugbounty-reporter 1.0.0 → 1.1.0
+#   Updating "hexstrike-forge"...
+#   ✓  [claude-code] hexstrike-forge 1.1.0 → 1.2.0
+```
+
+Version is read from the `version` field in each skill's YAML frontmatter. Only skills with a version mismatch are updated.
 
 ## What are agent skills?
 
