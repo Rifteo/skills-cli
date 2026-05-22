@@ -131,28 +131,32 @@ Browse and contribute skills → [github.com/AuditGuard-Community/skills](https:
 |---|---|
 | Claude Code | `claude-code` |
 | Gemini CLI | `gemini-cli` |
+| Codex | `codex` |
 | Cursor | `cursor` |
 | GitHub Copilot | `github-copilot` |
 | Windsurf | `windsurf` |
-| Codex | `codex` |
-| OpenCode | `opencode` |
 | Cline | `cline` |
 | Continue | `continue` |
-| Roo Code | `roo` |
-| Goose | `goose` |
-| OpenHands | `openhands` |
-| Devin | `devin` |
 | Aider Desk | `aider-desk` |
+| Roo Code | `roo` |
+| OpenHands | `openhands` |
+| Goose | `goose` |
+| Devin | `devin` |
 | Augment | `augment` |
+| Amp | `amp` |
+| Warp | `warp` |
+| Replit | `replit` |
 | Tabnine CLI | `tabnine-cli` |
 | Kilo Code | `kilo` |
+| OpenCode | `opencode` |
 | Zencoder | `zencoder` |
 | Trae | `trae` |
 | Trae CN | `trae-cn` |
 | Qwen Code | `qwen-code` |
 | Mistral Vibe | `mistral-vibe` |
 | Junie | `junie` |
-| Amp | `amp` |
+| Kimi CLI | `kimi-cli` |
+| Kiro CLI | `kiro-cli` |
 | Antigravity | `antigravity` |
 | Bob (IBM) | `bob` |
 | CodeArts Agent | `codearts-agent` |
@@ -168,16 +172,12 @@ Browse and contribute skills → [github.com/AuditGuard-Community/skills](https:
 | ForgeCode | `forgecode` |
 | Hermes Agent | `hermes-agent` |
 | iFlow CLI | `iflow-cli` |
-| Kimi CLI | `kimi-cli` |
-| Kiro CLI | `kiro-cli` |
 | Kode | `kode` |
 | MCPJam | `mcpjam` |
 | Mux | `mux` |
 | Pi | `pi` |
 | Qoder | `qoder` |
-| Replit | `replit` |
 | RovoDev | `rovodev` |
-| Warp | `warp` |
 | Neovate | `neovate` |
 | Pochi | `pochi` |
 | Adal | `adal` |
