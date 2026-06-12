@@ -1,4 +1,4 @@
-﻿# Contributing to rifteo-skills
+# Contributing to rifteo-skills
 
 ## Adding a new agent
 
