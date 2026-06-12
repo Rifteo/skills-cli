@@ -1,23 +1,23 @@
-<div align="center">
+﻿<div align="center">
 
-# AuditGuard Skills CLI
+# Rifteo Skills CLI
 
-The CLI for the AuditGuard open agent skills ecosystem — install security and audit skills into 54+ coding agents including Claude Code, Gemini CLI, Cursor, GitHub Copilot, Windsurf, and more.
+The CLI for the Rifteo open agent skills ecosystem — install security and audit skills into 54+ coding agents including Claude Code, Gemini CLI, Cursor, GitHub Copilot, Windsurf, and more.
 
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![npm](https://img.shields.io/badge/npm-coming%20soon-lightgrey)](https://www.npmjs.com/package/auditguard-skills)
-[![Issues](https://img.shields.io/github/issues/AuditGuard-Community/skills-cli)](https://github.com/AuditGuard-Community/skills-cli/issues)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](https://github.com/AuditGuard-Community/skills-cli/pulls)
+[![npm](https://img.shields.io/badge/npm-coming%20soon-lightgrey)](https://www.npmjs.com/package/rifteo-skills)
+[![Issues](https://img.shields.io/github/issues/rifteo/skills-cli)](https://github.com/rifteo/skills-cli/issues)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](https://github.com/rifteo/skills-cli/pulls)
 
 </div>
 
 ## Quickstart
 
 ```bash
-git clone https://github.com/AuditGuard-Community/skills-cli
+git clone https://github.com/rifteo/skills-cli
 cd skills-cli
 npm link
-auditguard-skills add finding-writer
+rifteo-skills add finding-writer
 ```
 
 ## Installation
@@ -25,47 +25,47 @@ auditguard-skills add finding-writer
 Clone the repo and link it globally with npm:
 
 ```bash
-git clone https://github.com/AuditGuard-Community/skills-cli
+git clone https://github.com/rifteo/skills-cli
 cd skills-cli
 npm link
 ```
 
-This registers `auditguard-skills` as a global command on your machine. You only need to do this once.
+This registers `rifteo-skills` as a global command on your machine. You only need to do this once.
 
-> `npm publish` coming soon — once released, `npx auditguard-skills` will work without cloning.
+> `npm publish` coming soon — once released, `npx rifteo-skills` will work without cloning.
 
 ## Commands
 
 ```bash
 # Install a skill into all detected agents
-auditguard-skills add finding-writer
+rifteo-skills add finding-writer
 
 # Install into a specific agent
-auditguard-skills add finding-writer --agent gemini-cli
+rifteo-skills add finding-writer --agent gemini-cli
 
 # Install globally (user home directory)
-auditguard-skills add finding-writer --global
+rifteo-skills add finding-writer --global
 
 # Check which installed skills have a newer version available
-auditguard-skills outdated
+rifteo-skills outdated
 
 # Update all installed skills to their latest version
-auditguard-skills update
+rifteo-skills update
 
 # List all available skills from the registry
-auditguard-skills available
+rifteo-skills available
 
 # List installed skills
-auditguard-skills list
+rifteo-skills list
 
 # Show detected agents on this machine
-auditguard-skills agents
+rifteo-skills agents
 
 # Remove a skill
-auditguard-skills remove finding-writer
+rifteo-skills remove finding-writer
 
 # Help
-auditguard-skills help
+rifteo-skills help
 ```
 
 ## Options
@@ -81,7 +81,7 @@ When a skill is updated in the registry, your local copy stays at the old versio
 
 ```bash
 # See what's outdated
-auditguard-skills outdated
+rifteo-skills outdated
 
 #   Skill                        Agent              Installed    Latest
 #   ----------------------------------------------------------------------
@@ -89,7 +89,7 @@ auditguard-skills outdated
 #   hexstrike-forge              claude-code        1.1.0        1.2.0
 
 # Update everything at once
-auditguard-skills update
+rifteo-skills update
 
 #   Updating "bugbounty-reporter"...
 #   ✓  [claude-code] bugbounty-reporter 1.0.0 → 1.1.0
@@ -121,11 +121,11 @@ Skills are stored in agent-specific directories and picked up automatically on t
 |---|---|
 | `finding-writer` | Raw notes → structured audit finding |
 
-Browse and contribute skills → [github.com/AuditGuard-Community/skills](https://github.com/AuditGuard-Community/skills)
+Browse and contribute skills → [github.com/rifteo/skills](https://github.com/rifteo/skills)
 
 ## Supported agents
 
-54 agents supported. Use `auditguard-skills agents` to see which ones are detected on your machine.
+54 agents supported. Use `rifteo-skills agents` to see which ones are detected on your machine.
 
 | Agent | Flag |
 |---|---|
@@ -185,7 +185,7 @@ Browse and contribute skills → [github.com/AuditGuard-Community/skills](https:
 
 ## Creating a skill
 
-1. Fork [github.com/AuditGuard-Community/askills](https://github.com/AuditGuard-Community/skills)
+1. Fork [github.com/rifteo/skills](https://github.com/rifteo/skills)
 2. Create a folder named after your skill
 3. Add a `SKILL.md` file
 
@@ -207,9 +207,9 @@ Instructions for the agent to follow when this skill is activated.
 
 4. Open a pull request — all skill submissions are welcome
 
-## Part of AuditGuard
+## Part of Rifteo
 
-These skills work standalone with any agent and integrate natively with the [AuditGuard](https://github.com/AuditGuard-Community) pentest management platform.
+These skills work standalone with any agent and integrate natively with the [Rifteo](https://github.com/rifteo) open security toolkit.
 
 ## License
 

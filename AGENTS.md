@@ -1,6 +1,6 @@
 # Supported Agents
 
-All 54 agents supported by `auditguard-skills`, with their project-level and global skill paths.
+All 54 agents supported by `rifteo-skills`, with their project-level and global skill paths.
 
 | Agent | Flag | Project path | Global path |
 |---|---|---|---|
