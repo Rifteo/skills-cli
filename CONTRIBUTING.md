@@ -1,4 +1,4 @@
-# Contributing to auditguard-skills
+# Contributing to rifteo-skills
 
 ## Adding a new agent
 
@@ -15,16 +15,16 @@ Then update the supported agents table in `README.md`.
 
 ## Adding a new skill
 
-Skills live in the [agent-skills](https://github.com/AuditGuard-Community/agent-skills) repo, not here.
+Skills live in the [skills](https://github.com/rifteo/skills) repo, not here.
 Open a PR there — a GitHub Actions workflow auto-updates the discovery index on merge.
 
 ## Running locally
 
 ```bash
-git clone https://github.com/AuditGuard-Community/skills
-cd skills
+git clone https://github.com/rifteo/skills-cli
+cd skills-cli
 npm link
-auditguard-skills help
+rifteo-skills help
 ```
 
 ## Publishing to npm

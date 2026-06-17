@@ -16,13 +16,13 @@ async function promptCommands() {
   if (prefs.commands === 'never') return
   if (!process.stdin.isTTY) return
 
-  const answer = await ask('\n  Install AuditGuard slash commands for Claude Code? [Y/n/never] ')
+  const answer = await ask('\n  Install Rifteo slash commands for Claude Code? [Y/n/never] ')
   const normalized = answer.toLowerCase()
 
   if (normalized === '' || normalized === 'y') {
     try {
       const installed = await installCommands()
-      installed.forEach(f => ok(`[commands] /auditguard:${f.replace('.md', '')}`))
+      installed.forEach(f => ok(`[commands] /rifteo:${f.replace('.md', '')}`))
     } catch (e) {
       log(`  ! Could not install commands: ${e.message}`)
     }
@@ -49,40 +49,40 @@ function err(msg) { console.error(`\n  error  ${msg}\n`); process.exit(1) }
 function ok(msg)  { console.log(`  ✓  ${msg}`) }
 
 const HELP = `
-  auditguard-skills — AuditGuard agent skills manager
+  rifteo-skills — Rifteo agent skills manager
 
   Usage:
-    auditguard-skills add <skill>      Install a skill
-    auditguard-skills remove <skill>   Remove an installed skill
-    auditguard-skills update           Update all installed skills to latest version
-    auditguard-skills outdated         Show which installed skills have a newer version
-    auditguard-skills list             List installed skills
-    auditguard-skills available        List all available skills
-    auditguard-skills agents           List detected agents on this machine
-    auditguard-skills help             Show this help
+    rifteo-skills add <skill>      Install a skill
+    rifteo-skills remove <skill>   Remove an installed skill
+    rifteo-skills update           Update all installed skills to latest version
+    rifteo-skills outdated         Show which installed skills have a newer version
+    rifteo-skills list             List installed skills
+    rifteo-skills available        List all available skills
+    rifteo-skills agents           List detected agents on this machine
+    rifteo-skills help             Show this help
 
   Options:
     --agent, -a <name>   Target a specific agent (default: all detected agents)
     --global, -g         Install/remove globally instead of project-level
 
   Examples:
-    auditguard-skills add finding-writer
-    auditguard-skills add finding-writer --agent gemini-cli
-    auditguard-skills add risk-assessor --global
-    auditguard-skills remove finding-writer
-    auditguard-skills list
-    auditguard-skills agents
+    rifteo-skills add finding-writer
+    rifteo-skills add finding-writer --agent gemini-cli
+    rifteo-skills add risk-assessor --global
+    rifteo-skills remove finding-writer
+    rifteo-skills list
+    rifteo-skills agents
 `
 
 // Resolve target agents — specific one or all detected
 function resolveTargetAgents() {
   if (flags.agent) {
-    if (!AGENTS[flags.agent]) err(`Unknown agent "${flags.agent}". Run "AuditGuard-Community-skills agents" to see detected agents.`)
+    if (!AGENTS[flags.agent]) err(`Unknown agent "${flags.agent}". Run "rifteo-skills agents" to see detected agents.`)
     return [flags.agent]
   }
   const detected = detectAgents()
   if (detected.length === 0) {
-    err('No agents detected on this machine.\n  Use --agent <name> to specify one manually.\n  Run "AuditGuard-Community-skills agents" to see all supported agents.')
+    err('No agents detected on this machine.\n  Use --agent <name> to specify one manually.\n  Run "rifteo-skills agents" to see all supported agents.')
   }
   return detected
 }
@@ -90,7 +90,7 @@ function resolveTargetAgents() {
 switch (command) {
   case 'add': {
     const skillName = args[1]
-    if (!skillName) err('Please provide a skill name.\n  Example: AuditGuard-Community-skills add finding-writer')
+    if (!skillName) err('Please provide a skill name.\n  Example: rifteo-skills add finding-writer')
 
     const targets = resolveTargetAgents()
     log(`\n  Installing "${skillName}" into ${targets.length} agent(s)...\n`)
@@ -107,7 +107,7 @@ switch (command) {
 
   case 'remove': {
     const skillName = args[1]
-    if (!skillName) err('Please provide a skill name.\n  Example: AuditGuard-Community-skills remove finding-writer')
+    if (!skillName) err('Please provide a skill name.\n  Example: rifteo-skills remove finding-writer')
 
     const targets = resolveTargetAgents()
     log(`\n  Removing "${skillName}" from ${targets.length} agent(s)...\n`)
@@ -156,7 +156,7 @@ switch (command) {
       .then(skills => {
         log(`\n  Available skills:\n`)
         skills.forEach(s => log(`    • ${s}`))
-        log(`\n  Install with: AuditGuard-Community-skills add <skill-name>\n`)
+        log(`\n  Install with: rifteo-skills add <skill-name>\n`)
       })
       .catch(e => err(e.message))
     break
@@ -186,7 +186,7 @@ switch (command) {
       rows.forEach(({ agent, skillName, local, remote }) =>
         log(`  ${skillName.padEnd(28)} ${agent.padEnd(18)} ${local.padEnd(12)} ${remote}`)
       )
-      log(`\n  Run "auditguard-skills update" to update all.\n`)
+      log(`\n  Run "rifteo-skills update" to update all.\n`)
     }
     break
   }
@@ -238,5 +238,5 @@ switch (command) {
     break
 
   default:
-    err(`Unknown command "${command}". Run "AuditGuard-Community-skills help" for usage.`)
+    err(`Unknown command "${command}". Run "rifteo-skills help" for usage.`)
 }
