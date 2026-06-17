@@ -5,7 +5,7 @@
 The CLI for the Rifteo open agent skills ecosystem â€” install security and audit skills into 54+ coding agents including Claude Code, Gemini CLI, Cursor, GitHub Copilot, Windsurf, and more.
 
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![npm](https://img.shields.io/npm/v/rifteo-skills)](https://www.npmjs.com/package/rifteo-skills)
+[![npm](https://img.shields.io/npm/v/%40rifteo%2Fskills)](https://www.npmjs.com/package/@rifteo/skills)
 [![Issues](https://img.shields.io/github/issues/rifteo/skills-cli)](https://github.com/rifteo/skills-cli/issues)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](https://github.com/rifteo/skills-cli/pulls)
 
@@ -14,7 +14,7 @@ The CLI for the Rifteo open agent skills ecosystem â€” install security and
 ## Quickstart
 
 ```bash
-npm install -g rifteo-skills
+npm install -g @rifteo/skills
 rifteo-skills add finding-writer
 ```
 
@@ -23,7 +23,7 @@ rifteo-skills add finding-writer
 Install globally via npm:
 
 ```bash
-npm install -g rifteo-skills
+npm install -g @rifteo/skills
 ```
 
 This registers `rifteo-skills` as a global command. You only need to do this once.
@@ -31,7 +31,7 @@ This registers `rifteo-skills` as a global command. You only need to do this onc
 Or run without installing:
 
 ```bash
-npx rifteo-skills add finding-writer
+npx @rifteo/skills add finding-writer
 ```
 
 ## Commands
