@@ -2,10 +2,10 @@
 
 # Rifteo Skills CLI
 
-The CLI for the Rifteo open agent skills ecosystem — install security and audit skills into 54+ coding agents including Claude Code, Gemini CLI, Cursor, GitHub Copilot, Windsurf, and more.
+The CLI for the Rifteo open agent skills ecosystem â€” install security and audit skills into 54+ coding agents including Claude Code, Gemini CLI, Cursor, GitHub Copilot, Windsurf, and more.
 
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![npm](https://img.shields.io/badge/npm-coming%20soon-lightgrey)](https://www.npmjs.com/package/rifteo-skills)
+[![npm](https://img.shields.io/npm/v/rifteo-skills)](https://www.npmjs.com/package/rifteo-skills)
 [![Issues](https://img.shields.io/github/issues/rifteo/skills-cli)](https://github.com/rifteo/skills-cli/issues)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](https://github.com/rifteo/skills-cli/pulls)
 
@@ -14,25 +14,25 @@ The CLI for the Rifteo open agent skills ecosystem — install security and audi
 ## Quickstart
 
 ```bash
-git clone https://github.com/rifteo/skills-cli
-cd skills-cli
-npm link
+npm install -g rifteo-skills
 rifteo-skills add finding-writer
 ```
 
 ## Installation
 
-Clone the repo and link it globally with npm:
+Install globally via npm:
 
 ```bash
-git clone https://github.com/rifteo/skills-cli
-cd skills-cli
-npm link
+npm install -g rifteo-skills
 ```
 
-This registers `rifteo-skills` as a global command on your machine. You only need to do this once.
+This registers `rifteo-skills` as a global command. You only need to do this once.
 
-> `npm publish` coming soon — once released, `npx rifteo-skills` will work without cloning.
+Or run without installing:
+
+```bash
+npx rifteo-skills add finding-writer
+```
 
 ## Commands
 
@@ -92,9 +92,9 @@ rifteo-skills outdated
 rifteo-skills update
 
 #   Updating "bugbounty-reporter"...
-#   ✓  [claude-code] bugbounty-reporter 1.0.0 → 1.1.0
+#   âœ“  [claude-code] bugbounty-reporter 1.0.0 â†’ 1.1.0
 #   Updating "hexstrike-forge"...
-#   ✓  [claude-code] hexstrike-forge 1.1.0 → 1.2.0
+#   âœ“  [claude-code] hexstrike-forge 1.1.0 â†’ 1.2.0
 ```
 
 Version is read from the `version` field in each skill's YAML frontmatter. Only skills with a version mismatch are updated.
@@ -119,9 +119,9 @@ Skills are stored in agent-specific directories and picked up automatically on t
 
 | Skill | What it does |
 |---|---|
-| `finding-writer` | Raw notes → structured audit finding |
+| `finding-writer` | Raw notes â†’ structured audit finding |
 
-Browse and contribute skills → [github.com/rifteo/skills](https://github.com/rifteo/skills)
+Browse and contribute skills â†’ [github.com/rifteo/skills](https://github.com/rifteo/skills)
 
 ## Supported agents
 
@@ -185,7 +185,7 @@ Browse and contribute skills → [github.com/rifteo/skills](https://github.com/r
 
 ## Creating a skill
 
-1. Fork [github.com/rifteo/skills](https://github.com/rifteo/skills)
+1. Fork [github.com/rifteo/askills](https://github.com/rifteo/skills)
 2. Create a folder named after your skill
 3. Add a `SKILL.md` file
 
@@ -205,11 +205,11 @@ description: What this skill does and when to use it
 Instructions for the agent to follow when this skill is activated.
 ```
 
-4. Open a pull request — all skill submissions are welcome
+4. Open a pull request â€” all skill submissions are welcome
 
 ## Part of Rifteo
 
-These skills work standalone with any agent and integrate natively with the [Rifteo](https://github.com/rifteo) open security toolkit.
+These skills work standalone with any agent and integrate natively with the [Rifteo](https://github.com/rifteo) pentest management platform.
 
 ## License
 

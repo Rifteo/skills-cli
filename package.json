@@ -10,10 +10,10 @@
   "engines": {
     "node": ">=18"
   },
-  "keywords": ["rifteo", "skills", "agent", "pentest", "audit", "claude"],
+  "keywords": ["Rifteo", "skills", "agent", "pentest", "audit", "claude"],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rifteo/skills"
+    "url": "https://github.com/rifteo/skills-cli"
   }
 }
