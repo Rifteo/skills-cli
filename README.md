@@ -92,9 +92,9 @@ rifteo-skills outdated
 rifteo-skills update
 
 #   Updating "bugbounty-reporter"...
-#   âœ“  [claude-code] bugbounty-reporter 1.0.0 â†’ 1.1.0
+#   - [claude-code] bugbounty-reporter 1.0.0 -> 1.1.0
 #   Updating "hexstrike-forge"...
-#   âœ“  [claude-code] hexstrike-forge 1.1.0 â†’ 1.2.0
+#   - [claude-code] hexstrike-forge 1.1.0 -> 1.2.0
 ```
 
 Version is read from the `version` field in each skill's YAML frontmatter. Only skills with a version mismatch are updated.
