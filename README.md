@@ -119,9 +119,9 @@ Skills are stored in agent-specific directories and picked up automatically on t
 
 | Skill | What it does |
 |---|---|
-| `finding-writer` | Raw notes â†’ structured audit finding |
+| `finding-writer` | Raw notes - structured audit finding |
 
-Browse and contribute skills â†’ [github.com/rifteo/skills](https://github.com/rifteo/skills)
+Browse and contribute skills - [github.com/rifteo/skills](https://github.com/rifteo/skills)
 
 ## Supported agents
 
