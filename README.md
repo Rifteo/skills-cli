@@ -2,7 +2,7 @@
 
 # Rifteo Skills CLI
 
-The CLI for the Rifteo open agent skills ecosystem â€” install security and audit skills into 54+ coding agents including Claude Code, Gemini CLI, Cursor, GitHub Copilot, Windsurf, and more.
+The CLI for the Rifteo open agent skills ecosystem - install security and audit skills into 54+ coding agents including Claude Code, Gemini CLI, Cursor, GitHub Copilot, Windsurf, and more.
 
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![npm](https://img.shields.io/npm/v/%40rifteo%2Fskills)](https://www.npmjs.com/package/@rifteo/skills)
@@ -205,7 +205,7 @@ description: What this skill does and when to use it
 Instructions for the agent to follow when this skill is activated.
 ```
 
-4. Open a pull request â€” all skill submissions are welcome
+4. Open a pull request - all skill submissions are welcome
 
 ## Part of Rifteo
 
