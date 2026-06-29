@@ -1,6 +1,6 @@
 {
   "name": "@rifteo/skills",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Install Rifteo agent skills for Claude Code, Cursor, and other AI agents",
   "bin": {
     "rifteo-skills": "./bin/cli.js"
